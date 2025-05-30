@@ -26,9 +26,8 @@ class Rede:
         while erro_acumulado > 0.01 and epoca < 3000:                                                                #alem da condicao de erro, limita-se o numero de ciclos q a rede pode rodar, para o programa nao demorar demais. Ps: nem sempre o programa vai convergir, tem q ter um pouco de sorte. Geralmente o caso [0,0] e [0,1] (ou [1,0]) convergem rapido pra 0 e 1, enquanto [1,0] (ou [0,1]) e [1,1] convergem pro mesmo valor, q é e a media entre seus valores esperados (0.5). Por tentativa e erro, percebi q sse for pra convergir ele convergirá em menos de 3000 epocas. Se passar disso, nem com limites de 1 milhao de epocas ele resolve o problema 
             self.neuronios[0].entradas = self.entradas
             self.neuronios[1].entradas = self.entradas
-
-            saidas_ocultas = [self.neuronios[0].saida(), self.neuronios[1].saida()]                                  #essas 3 linhas servem para pegar os resultados da camada oculta, transferir para o neuronio de saida e assim calcular a saida final da rede 
-            self.neuronios[2].entradas = np.array(list(zip(*saidas_ocultas)))
+                                  
+            self.neuronios[2].entradas = np.array(list(zip(self.neuronios[0].saida(), self.neuronios[1].saida())))   #essas 2 linhas servem para pegar os resultados da camada oculta, transferir para o neuronio de saida e assim calcular a saida final da rede
             saidas_finais = self.neuronios[2].saida()   
 
             erro_acumulado = 0                                                                                       #erro_acumulado representa o tanto de erro que a rede comete para cada ciclo, é a soma todos os seus erros de cada entrada
