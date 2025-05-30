@@ -84,7 +84,6 @@ if __name__ == '__main__':
     '''a logica desse algoritmo é criar uma rede com 3 neuronios, onde 2 deles aprenderao um certo padrao dos dados e o ultimo aprenderá a fazer a integracao desses. A ideia é criar uma camada oculta com esses 2 neuronios, que recebem as entradas como entrada,
     pegar a saida que eles calculam e conectar ao neuronio de saida, que pegará tais saidas como sua entrada, igual numa rede neural humana mesmo, onde vc conecta o axonio de um aos dentritos do proximo. Feito isso, o neuronio de saida calculara a saida final
     desse ciclo feedforward, comparará com a saidas esperadas, calculará o erro total desse ciclo, e com base nisso, irá corrigir os parametros dos neuronios, agora de frente pra trás, que é o backpropagation, em q o neuronio de saida corrige seus parametros
-
     e os da camada oculta corrigem os seus parametros com base nesses, de forma proporcional ao impacto (pesos) que eles tem no neuronio de saida, para q cada um se corrija proporcionalmente ao quanto é culpado pelo erro final.
     O algoritmo ficará nesse ciclo de feedforwards ate q o erro total de um ciclo-feedforward seja inferior ao quanto o programador julgou aceitavel
     '''
